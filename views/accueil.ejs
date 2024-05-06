@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site web dynamique</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <title>Accueil - EJS</title>
+    <link rel="stylesheet" href="./public/css/style.css">
+        <h1>Plateforme de streaming de DBE</h1>
+    <h1><%=title %></h1>
+    <div>
+        La liste des films
+    </div>
+
+    <p>
+        <img src="public/images/image.jpeg" alt="">
+    </p>
+
+
+    <header>
+       <h1>Site web streaming</h1>
+        <p>Découvrez une sélection diversifiée de contenus en streaming, offrant une expérience immersive pour tous les passionnés de divertissement.</p>.</p> 
+
+        <!--<%- include ('partials/header.ejs') %>-->
+        
+    </header>
+    <!-- le navbar de la page-->
+    <nav>
+        <ul>
+            <li>Accueil</li>
+            <li>Films</li>
+            <li>Utilisateurs</li>
+            <li>API films</li>
+        </ul>
+    </nav>
+     <!-- le contenu-->
+     <main>
+        <h3>Bientot on aura les films</h3>
+
+        <div>
+            <article id=""art2>
+                <table border="1">
+                    <tr>
+                        <th>Titre</th>
+                        <th>Annee</th>
+                        <th>Realisateur</th>
+                    </tr>
+
+                    <%films.forEach(function(film) {%>
+                        <tr>
+                            <td><%= film.title%></td>
+                            <td><%= film.year%></td>
+                            <td><%= film.author%></td>
+                        </tr>
+                        <%});%>
+                    <!--<tr>
+                        <td>one piece</td>
+                        <td>2003</td>
+                        <td>Rass</td>
+                    </tr>
+
+                    <tr>
+                        <td>Bete Bete</td>
+                        <td>2024</td>
+                        <td>Eventprod</td>
+                    </tr>-->
+                </table>
+            </article>
+        </div>
+        
+     </main>
+
+     <!-- le pied de la page-->
+        <footer>
+          <div>
+                <ul>
+                    <li>Contenu 1</li>
+                    <li>Contenu 2</li>
+                </ul>
+                <ol>
+                    <li>Point 1</li>
+                    <li>Point 2</li>
+                </ol>
+            </div>
+            <p class="copyright">copyright <%=copyright%></p>
+           <!-- <%- include ('partials/footer.ejs') %>-->
+        </footer>
+
+    
+   
+</body>
+</html>
